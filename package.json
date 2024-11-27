@@ -16,6 +16,7 @@
   "description": "",
   "dependencies": {
     "agent-twitter-client": "^0.0.13",
+    "algoliasearch": "^5.15.0",
     "axios": "^1.7.7",
     "chalk": "^5.3.0",
     "cheerio": "^1.0.0",
