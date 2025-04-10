@@ -173,7 +173,8 @@ Ensure that the character description and prompts are detailed enough to capture
 Format your response as a valid JSON object, with each field containing the appropriate content as described above. Do not include any additional commentary or explanations outside of the JSON structure.`;
 
     const openai = new OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
+        baseURL: process.env.OPENAI_BASE_URL,
+        apiKey: process.env.OPENAI_API_KEY
     });
 
     const spinner = ora('Generating character...').start();

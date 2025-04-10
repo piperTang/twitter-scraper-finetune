@@ -173,6 +173,7 @@ async saveCookies() {
     const username = process.env.TWITTER_USERNAME;
     const password = process.env.TWITTER_PASSWORD;
     const email = process.env.TWITTER_EMAIL;
+    const twoFactorCode = process.env.TWITTER_2FA_CODE;
 
     if (!username || !password || !email) {
       Logger.error("Missing required credentials. Need username, password, AND email");
@@ -187,7 +188,7 @@ async saveCookies() {
         await this.randomDelay(5000, 10000);
 
         // Always use email in login attempt
-        await this.scraper.login(username, password, email);
+        await this.scraper.login(username, password, email,twoFactorCode);
 
         // Verify login success
         const isLoggedIn = await this.scraper.isLoggedIn();
